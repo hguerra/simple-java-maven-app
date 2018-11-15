@@ -25,6 +25,7 @@ pipeline {
         
         stage('Deliver') {
             steps {
+                sh 'echo "abacate"'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
