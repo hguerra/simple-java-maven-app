@@ -27,11 +27,14 @@ pipeline {
             steps {
 
                 println ">>>>>>>>>> Branch name: ${env.GIT_BRANCH} <<<<<<<<<<"
-                if (env.GIT_BRANCH == 'origin/master') {
-                    println ">>>>>>>>>> Deploy <<<<<<<<<<"
-                    sh './jenkins/scripts/deliver.sh'
-                } else {
-                    println ">>>>>>>>>> Build skipping the 'deployment' section <<<<<<<<<<"
+
+                script {
+                    if (env.GIT_BRANCH == 'origin/master') {
+                        println ">>>>>>>>>> Deploy <<<<<<<<<<"
+                        sh './jenkins/scripts/deliver.sh'
+                    } else {
+                        println ">>>>>>>>>> Build skipping the 'deployment' section <<<<<<<<<<"
+                    }
                 }
 
             }
