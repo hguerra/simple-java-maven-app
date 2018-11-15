@@ -25,7 +25,7 @@ pipeline {
         
         stage('Deliver') {
             steps {
-                sh 'echo "abacate"'
+                sh 'echo env.GIT_BRANCH'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
