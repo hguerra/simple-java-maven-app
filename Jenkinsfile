@@ -23,9 +23,9 @@ pipeline {
             }
         }
         
-        sh 'echo ">>>>>>>>>> Branch name: ${env.GIT_BRANCH} <<<<<<<<<<"'
-        if (env.GIT_BRANCH == 'origin/master') {
-            stage('Deliver') {
+        stage('Deliver') {
+            sh 'echo ">>>>>>>>>> Branch name: ${env.GIT_BRANCH} <<<<<<<<<<"'
+            if (env.GIT_BRANCH == 'origin/master') {
                 steps {
                     sh './jenkins/scripts/deliver.sh'
                 }
