@@ -25,7 +25,7 @@ pipeline {
         
         stage('Deliver') {
             steps {
-                sh 'echo "Branch name: ${env.GIT_BRANCH}"'
+                println env.GIT_BRANCH
                 sh './jenkins/scripts/deliver.sh'
             }
         }
