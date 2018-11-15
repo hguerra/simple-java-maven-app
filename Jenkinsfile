@@ -23,6 +23,7 @@ pipeline {
             }
         }
         
+        echo ">>>>>>>>>> Branch name: ${env.GIT_BRANCH} <<<<<<<<<<"
         if (env.GIT_BRANCH == 'origin/master') {
             stage('Deliver') {
                 steps {
