@@ -30,10 +30,10 @@ pipeline {
 
                 script {
                     if (env.GIT_BRANCH == 'origin/master') {
-                        println "\e[32m>>>>>>>>>> Deploy <<<<<<<<<<\e[0m"
+                        printf "\e[32m>>>>>>>>>> Deploy <<<<<<<<<<\e[0m\n"
                         sh './jenkins/scripts/deliver.sh'
                     } else {
-                        println "\e[31m>>>>>>>>>> Build skipping the 'deployment' section :) <<<<<<<<<<\e[0m"
+                        printf "\e[31m>>>>>>>>>> Build skipping the 'deployment' section :) <<<<<<<<<<\e[0m\n"
                     }
                 }
 
