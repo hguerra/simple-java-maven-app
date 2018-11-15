@@ -33,7 +33,7 @@ pipeline {
                         println ">>>>>>>>>> Deploy <<<<<<<<<<"
                         sh './jenkins/scripts/deliver.sh'
                     } else {
-                        println ">>>>>>>>>> Build skipping the 'deployment' section <<<<<<<<<<"
+                        println ">>>>>>>>>> Build skipping the 'deployment' section :) <<<<<<<<<<"
                     }
                 }
 
