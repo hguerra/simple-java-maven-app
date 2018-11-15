@@ -25,8 +25,15 @@ pipeline {
         
         stage('Deliver') {
             steps {
+
                 println ">>>>>>>>>> Branch name: ${env.GIT_BRANCH} <<<<<<<<<<"
-                sh './jenkins/scripts/deliver.sh'
+                if (env.GIT_BRANCH == 'origin/master') {
+                    println ">>>>>>>>>> Deploy <<<<<<<<<<"
+                    sh './jenkins/scripts/deliver.sh'
+                } else {
+                    println ">>>>>>>>>> Build skipping the 'deployment' section <<<<<<<<<<"
+                }
+
             }
         }
     }
