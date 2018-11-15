@@ -22,9 +22,12 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
+        
+        if (env.GIT_BRANCH == 'origin/master') {
+            stage('Deliver') {
+                steps {
+                    sh './jenkins/scripts/deliver.sh'
+                }
             }
         }
     }
